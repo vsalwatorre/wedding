@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Сватбата на Кристиян и Вероника</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #b19cd9;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+        }
+        #countdown {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .section-title {
+            color: #b19cd9;
+            margin-bottom: 10px;
+        }
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #b19cd9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #b19cd9;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Кристиян & Вероника</h1>
+        <h2>04.08.2025</h2>
+        <div id="countdown"></div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Кумове</h2>
+        <p>Кристофър и Александра</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Локация</h2>
+        <p>Добави тук информация за мястото.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Програма</h2>
+        <p>Добави тук програмата за деня.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Потвърди присъствие</h2>
+        <form name="rsvp">
+            <input type="text" name="name" placeholder="Име" required>
+            <input type="email" name="email" placeholder="Имейл" required>
+            <textarea name="message" placeholder="Съобщение (по избор)"></textarea>
+            <button type="submit">Изпрати</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>С нетърпение очакваме да споделим този ден с вас!</p>
+    </footer>
+
+    <script>
+        // Таймер за обратно броене
+        const countdown = () => {
+            const weddingDate = new Date("2025-08-04T00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "д " + hours + "ч " + minutes + "м " + seconds + "с ";
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "Денят настъпи!";
+            }
+        };
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>
