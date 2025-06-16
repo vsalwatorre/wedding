@@ -34,24 +34,10 @@
             color: #b19cd9;
             margin-bottom: 10px;
         }
-        form {
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            margin: auto;
-        }
-        input, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 1em;
-        }
-        button {
-            background-color: #b19cd9;
-            color: white;
+        iframe {
             border: none;
-            cursor: pointer;
+            width: 100%;
+            height: 600px;
         }
         footer {
             background-color: #b19cd9;
@@ -86,12 +72,7 @@
 
     <section>
         <h2 class="section-title">Потвърди присъствие</h2>
-        <form name="rsvp">
-            <input type="text" name="name" placeholder="Име" required>
-            <input type="email" name="email" placeholder="Имейл" required>
-            <textarea name="message" placeholder="Съобщение (по избор)"></textarea>
-            <button type="submit">Изпрати</button>
-        </form>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScmReoO5oHD5eNxAf_fPn-fuhUxtv1AqRYMlrnGugpQYlDoYA/viewform?embedded=true" width="100%" height="600">Зареждане…</iframe>
     </section>
 
     <footer>
@@ -99,7 +80,6 @@
     </footer>
 
     <script>
-        // Таймер за обратно броене
         const countdown = () => {
             const weddingDate = new Date("2025-08-04T00:00:00").getTime();
             const now = new Date().getTime();
